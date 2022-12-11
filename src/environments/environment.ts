@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiURL: 'https: conduit.productionready.io/api'
+  // apiURL: 'https://conduit.productionready.io/api',  //only if free api is working
+  apiURL: 'https://localhost:3000/api'
 };
 
 /*

@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core'
-import { FormGroup, FormBuilder, Validators } from '@angular/forms'
-import { select, Store } from '@ngrx/store'
-import { Observable } from 'rxjs'
-import { AppStateInterface } from 'src/app/shared/types/appState.interface'
+import {Component, OnInit} from '@angular/core'
+import {FormGroup, FormBuilder, Validators} from '@angular/forms'
+import {select, Store} from '@ngrx/store'
+import {Observable} from 'rxjs'
+import {AppStateInterface} from 'src/app/shared/types/appState.interface'
 
-import { registerAction } from '../../store/actions'
-import { isSubmittedSelector } from '../../store/selectors'
+import {isSubmittedSelector} from 'src/app/auth/store/selectors'
+import {RegisterRequestInterface} from '../../types/registerRequest.interface'
+import {registerAction} from '../../store/actions/register.actions'
 
 @Component({
   selector: 'app-register',
@@ -28,9 +29,9 @@ export class RegisterComponent implements OnInit {
 
   initializeForm(): void {
     this.form = this.fb.group({
-      username: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
+      username: ['', Validators.required],
     })
   }
 
@@ -40,7 +41,10 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('submit', this.form.value, this.form.valid)
-    this.store.dispatch(registerAction(this.form.value))
+    // console.log('submit', this.form.value, this.form.valid)
+    const request: RegisterRequestInterface = {
+      user: this.form.value,
+    }
+    this.store.dispatch(registerAction({request}))
   }
 }
