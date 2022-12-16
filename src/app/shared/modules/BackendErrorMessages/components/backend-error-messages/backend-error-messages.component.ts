@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core'
-import {BackendErrorsInterface} from 'src/app/shared/types/backendErrors.interface'
+import { Component, Input, OnInit } from '@angular/core'
+import { BackendErrorsInterface } from 'src/app/shared/types/backendErrors.interface'
 
 @Component({
   selector: 'app-backend-error-messages',
@@ -16,7 +16,7 @@ export class BackendErrorMessagesComponent implements OnInit {
     this.errorMessages = Object.keys(this.backendErrorsProps).map(
       (name: string) => {
         const message = this.backendErrorsProps[name].join(' ')
-        return `${message}`
+        return `${name} ${message}`
       }
     )
   }
