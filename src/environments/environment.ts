@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   // apiURL: 'https://conduit.productionready.io/api',  //only if free api is working
   apiURL: 'http://localhost:3000/api',
+  limit: 6,
 };
 
 /*
