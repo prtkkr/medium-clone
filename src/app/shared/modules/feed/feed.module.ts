@@ -10,9 +10,10 @@ import { FeedComponent } from 'src/app/shared/modules/feed/components/feed/feed.
 import { FeedService } from 'src/app/shared/modules/feed/services/feed.service'
 import { GetFeedEffect } from 'src/app/shared/modules/feed/store/effects/getFeed.effect'
 import { reducers } from 'src/app/shared/modules/feed/store/reducers'
-import { ErrorMessageModule } from '../error-message/error-message.module'
-import { LoadingModule } from '../loading/loading.module'
-import { PaginationModule } from '../pagination/pagination.module'
+import { ErrorMessageModule } from 'src/app/shared/modules/error-message/error-message.module'
+import { LoadingModule } from 'src/app/shared/modules/loading/loading.module'
+import { PaginationModule } from 'src/app/shared/modules/pagination/pagination.module'
+import { TagListModule } from 'src/app/shared/modules/tag-list/tag-list.module'
 
 @NgModule({
   declarations: [FeedComponent],
@@ -25,7 +26,8 @@ import { PaginationModule } from '../pagination/pagination.module'
     StoreModule.forFeature('feed', reducers),
     ErrorMessageModule,
     LoadingModule,
-    PaginationModule
+    PaginationModule,
+    TagListModule
   ],
   exports: [FeedComponent],
   providers: [FeedService],

@@ -21,6 +21,7 @@
       <p>{{ article.description }}</p>
       <span>Read more..</span>
       <!-- LIST OF TAGS HERE -->
+      <app-tag-list [tags]="article.tagList"></app-tag-list>
     </a>
   </div>
   <app-pagination
