@@ -8,8 +8,8 @@ import {
   getFeedActionSuccess,
   getFeedFailureAction,
 } from '../actions/getFeed.action'
-import { GetFeedResponsenterface } from '../../types/getFeedResponse.interface'
-import { FeedService } from '../../services/feed.service'
+import { GetFeedResponsenterface } from 'src/app/shared/modules/feed/types/getFeedResponse.interface'
+import { FeedService } from 'src/app/shared/modules/feed/services/feed.service'
 
 @Injectable()
 export class GetFeedEffect {
